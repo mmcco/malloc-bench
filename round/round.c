@@ -58,7 +58,7 @@ main(int argc, char *argv[])
 	time_t			 final_time;
 	long long		 dur;
 
-	while ((ch = getopt(argc, argv, "t:s:n:")) != -1) {
+	while ((ch = getopt(argc, argv, "n:s:t:")) != -1) {
 		switch (ch) {
 		case 'n':
 			niters = strtonum(optarg, 1, LLONG_MAX, &errstr);
@@ -81,7 +81,7 @@ main(int argc, char *argv[])
 				errx(1, "number of threads is %s: %s", errstr, optarg);
 			break;
 		default:
-			errx(1, "%s: [-t nthreads] [-s alloc_size] [-n niters]", getprogname());
+			errx(1, "%s: [-n niters] [-s alloc_size] [-t nthreads]", getprogname());
 		}
 	}
 
