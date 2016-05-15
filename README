@@ -1,0 +1,21 @@
+﻿A few simple dynamic allocator benchmarks.
+
+If you're running these on Linux, you'll need to use libbsd for
+reallocarray(3) and strtonum(3). This just involves including
+bsd/stdlib.h in every C file and adding -lbsd to LDFLAGS.
+
+Current benchmarks:
+
+ * pass-off [-t nthreads] [-s alloc_size] [-n niters]:
+ 
+   A master thread makes allocations and sends them to worker
+   threads to be freed in a round-robin manner.
+
+ * round [-t nthreads] [-s alloc_size] [-n niters]:
+ 
+   Multiple threads repeatedly make a number of allocations (1000,
+   by default) all at once and then free them.
+
+ * spin [-t nthreads] [-s alloc_size] [-n niters]:
+ 
+   Multiple threads make allocations and immediately free them.
