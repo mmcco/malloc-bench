@@ -4,7 +4,7 @@ LDADD =	-lpthread
 
 NOMAN =	YES
 
-CFLAGS  += -DNDEBUG -I../common
+CFLAGS  += -DNDEBUG -I../common -Wall
 CXXFLAGS += -DNDEBUG -I../common
 
 .include <bsd.prog.mk>
