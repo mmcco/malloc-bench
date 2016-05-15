@@ -52,20 +52,20 @@ main(int argc, char *argv[])
 
 	while ((ch = getopt(argc, argv, "t:s:n:")) != -1) {
 		switch (ch) {
-		case 't':
-			nthreads = strtonum(optarg, 1, LLONG_MAX, &errstr);
+		case 'n':
+			niters = strtonum(optarg, 1, LLONG_MAX, &errstr);
 			if (errstr != NULL)
-				errx(1, "number of threads is %s: %s", errstr, optarg);
+				errx(1, "number of iterations is %s: %s", errstr, optarg);
 			break;
 		case 's':
 			alloc_sz = strtonum(optarg, 1, LLONG_MAX, &errstr);
 			if (errstr != NULL)
 				errx(1, "allocation size is %s: %s", errstr, optarg);
 			break;
-		case 'n':
-			niters = strtonum(optarg, 1, LLONG_MAX, &errstr);
+		case 't':
+			nthreads = strtonum(optarg, 1, LLONG_MAX, &errstr);
 			if (errstr != NULL)
-				errx(1, "number of iterations is %s: %s", errstr, optarg);
+				errx(1, "number of threads is %s: %s", errstr, optarg);
 			break;
 		default:
 			errx(1, "%s: [-t nthreads] [-s alloc_size] [-n niters]", getprogname());
