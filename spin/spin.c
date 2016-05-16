@@ -42,12 +42,12 @@ thread_func(void *nil)
 int
 main(int argc, char *argv[])
 {
-	pthread_t		*threads;
-	size_t			 i;
-	int			 ch, e;
-	const char		*errstr;
-	struct timespec		 start, end;
-	long long		 dur;
+	pthread_t	*threads;
+	size_t		 i;
+	int		 ch, e;
+	const char	*errstr;
+	struct timespec	 start, end;
+	long long	 dur;
 
 	while ((ch = getopt(argc, argv, "n:s:t:")) != -1) {
 		switch (ch) {
