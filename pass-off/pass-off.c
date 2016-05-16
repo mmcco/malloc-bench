@@ -49,9 +49,7 @@ main(int argc, char *argv[])
 	size_t			 nthreads = 4, niters = 1000000, alloc_sz = 64, i;
 	int			 ch, e;
 	const char		*errstr;
-	void			*p;
 	struct timespec		 start, end;
-	time_t			 final_time;
 	long long		 dur;
 
 	while ((ch = getopt(argc, argv, "n:s:t:")) != -1) {

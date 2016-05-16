@@ -42,14 +42,11 @@ thread_func(void *nil)
 int
 main(int argc, char *argv[])
 {
-	struct thread_info	*infos;
 	pthread_t		*threads;
 	size_t			 i;
 	int			 ch, e;
 	const char		*errstr;
-	void			*p;
 	struct timespec		 start, end;
-	time_t			 final_time;
 	long long		 dur;
 
 	while ((ch = getopt(argc, argv, "n:s:t:")) != -1) {
